@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Space</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="#home" class="logo">STUDENT SPACE.</a>
+  <span>Pixel Persona 2026</span>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <p class="eyebrow">YOUR STUDENT LIFE, YOUR STORY</p>
+    <h1>REFINE YOUR<br>PRESSURE.</h1>
+    <p>College life isn't always easy. Find small steps to make it better.</p>
+    <a href="#problems" class="btn light">Explore Your Pressure ↓</a>
+  </div>
+  <div class="illustration">
+
+  </div>
+</section>
+
+<section class="section" id="problems">
+  <h2>What's bothering you?</h2>
+  <p class="subtitle">Choose a problem to find a solution.</p>
+
+  <div class="cards">
+    <button class="card lavender" data-problem="study">
+      <h3>📚 Study Pressure</h3>
+      <p>Exams, assignments and deadlines.</p>
+      <b>Find a solution ↗</b>
+    </button>
+
+    <button class="card mint" data-problem="career">
+      <h3>💼 Career Tension</h3>
+      <p>Jobs, placements and future worries.</p>
+      <b>Find a solution ↗</b>
+    </button>
+
+    <button class="card peach" data-problem="peer">
+      <h3>👥 Peer Pressure</h3>
+      <p>Comparing yourself with others.</p>
+      <b>Find a solution ↗</b>
+    </button>
+
+    <button class="card blue" data-problem="exhaustion">
+      <h3>🌧️ Mental Exhaustion</h3>
+      <p>Feeling tired and overwhelmed.</p>
+      <b>Find a solution ↗</b>
+    </button>
+  </div>
+
+  <div class="solution" id="solution">
+    Click a card to explore some practical steps.
+  </div>
+</section>
+
+<section class="section mood-section">
+  <h2>How are you feeling today?</h2>
+  <p class="subtitle">Choose the mood closest to yours.</p>
+
+  <div class="moods">
+    <button data-mood="stressed">😟<br>Stressed</button>
+    <button data-mood="tired">😴<br>Tired</button>
+    <button data-mood="low">😔<br>Low</button>
+    <button data-mood="anxious">😰<br>Anxious</button>
+    <button data-mood="okay">😊<br>Okay</button>
+  </div>
+
+  <div class="solution" id="moodMessage">
+    Your message will appear here.
+  </div>
+</section>
+
+<section class="section">
+  <h2>One small step at a time.</h2>
+  <p class="subtitle">Take a break and plan your day.</p>
+
+  <div class="tools">
+    <div class="tool">
+      <h3>⏳ Focus Timer</h3>
+      <div class="timer" id="timer">25:00</div>
+      <button class="btn dark" id="start">Start</button>
+      <button class="btn outline" id="pause">Pause</button>
+      <button class="btn outline" id="reset">Reset</button>
+      <p id="timerMessage">Ready when you are.</p>
+    </div>
+
+    <div class="tool">
+      <h3>✅ My Small Steps</h3>
+      <label><input type="checkbox" class="task"> Study one topic</label>
+      <label><input type="checkbox" class="task"> Take a short break</label>
+      <label><input type="checkbox" class="task"> Ask for help if needed</label>
+      <p id="progress">0 of 3 tasks completed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wall-section" id="wall">
+  <h2>The Student Wall 💚</h2>
+  <p class="subtitle">Real struggles. Kind words. No names displayed.</p>
+
+  <div class="wall">
+    <form id="postForm" class="tool">
+      <h3>Share what's on your mind</h3>
+      <p class="small">Avoid sharing names, phone numbers or personal details.</p>
+
+      <label for="category">Choose a category</label>
+      <select id="category">
+        <option>Study Pressure</option>
+        <option>Career Tension</option>
+        <option>Peer Pressure</option>
+        <option>Mental Exhaustion</option>
+        <option>Other</option>
+      </select>
+
+      <label for="story">Your thoughts</label>
+      <textarea id="story" minlength="10" maxlength="500"
+        placeholder="I've been feeling stressed because..."
+        required></textarea>
+
+      <p class="small" id="count">0 / 500 characters</p>
+      <button class="btn dark" type="submit">Share Anonymously ↗</button>
+      <p id="postMessage" class="small"></p>
+      <p class="small">Demo: posts are saved only in this browser.</p>
+    </form>
+
+    <div>
+      <div class="feed-heading">
+        <h3>You're not alone</h3>
+        <select id="filter">
+          <option>All</option>
+          <option>Study Pressure</option>
+          <option>Career Tension</option>
+          <option>Peer Pressure</option>
+          <option>Mental Exhaustion</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="posts" id="posts"></div>
+      <button class="btn outline" id="clearPosts">Clear My Posts</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="feedback-section" id="feedback">
+  <div class="feedback-card">
+    <p class="feedback-tag">✿ YOUR VOICE MATTERS ✿</p>
+
+    <h2>Help Us Make This  Better</h2>
+    <p class="feedback-intro">
+      Every thought adds a new colour to our canvas.
+      Tell us how your experience felt.
+    </p>
+
+    <form id="feedback-form">
+      <label for="visitor-name">Your name (optional)</label>
+      <input
+        type="text"
+        id="visitor-name"
+        placeholder="What should we call you?"
+      />
+
+      <label>How was your experience?</label>
+      <div class="rating-options">
+        <label>
+          <input type="radio" name="rating" value="1" required />
+          <span>😔<small>Not great</small></span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="2" />
+          <span>😐<small>Okay</small></span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="3" />
+          <span>🙂<small>Good</small></span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="4" />
+          <span>😊<small>Lovely</small></span>
+        </label>
+        <label>
+          <input type="radio" name="rating" value="5" />
+          <span>🤩<small>Amazing</small></span>
+        </label>
+      </div>
+
+      <label for="favourite">What did you enjoy the most?</label>
+      <select id="favourite" required>
+        <option value="">Choose your favourite</option>
+        <option>Creative artwork and design</option>
+        <option>Student pressure solutions</option>
+        <option>Happy Corner game</option>
+        <option>Motivational messages</option>
+        <option>Overall experience</option>
+      </select>
+
+      <label for="suggestion">Your thoughts or suggestions</label>
+      <textarea
+        id="suggestion"
+        rows="4"
+        placeholder="Tell us what you loved or what we can improve..."
+        required
+      ></textarea>
+
+      <label class="recommend-label">
+        <input type="checkbox" id="recommend" />
+        I would recommend this website to a friend 💚
+      </label>
+
+      <button type="submit" class="feedback-submit">
+        Send My Feedback ✨
+      </button>
+
+      <p class="feedback-note">
+        Thank you for helping our little corner grow 🌱
+      </p>
+
+      <p id="feedback-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="closing">
+  <h2>You are more than your marks.</h2>
+  <p>Your story is still being written. Give yourself time.</p>
+  <a href="#home" class="btn light">Back to Top ↑</a>
+</section>
+
+<footer>
+  <strong>STUDENT SPACE.</strong>
+  <p>Made for student life, with a little more understanding.</p>
+  <small>Pixel Persona 2026</small>
+</footer>
+
+</body>
+</html>
